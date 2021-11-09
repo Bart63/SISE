@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 from node import Node
 
 class DataStructure():

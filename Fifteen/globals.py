@@ -1,5 +1,9 @@
 #!/usr/bin/python
 
+ARGUMENT_LENGTH = 5
+MAX_DEPTH = 20
+NANO_TO_MILI = 0.000001
+
 METHODS = ['bfs', 'dfs', 'astr']
 
 METHOD_MAP = {
@@ -38,5 +42,3 @@ REVERSE_MOVEMENT_MAP={
     'U': 'D',
     'D': 'U'
 }
-
-ADD_ELEMTWISE = lambda i, j: i + j

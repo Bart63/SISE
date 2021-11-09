@@ -1,20 +1,18 @@
 #!/usr/bin/python
 
-import sys
 import re
+import sys
 import globals as glob
 from os.path import exists
 
 class Clargs():
-    number_of_args = 5
-
     def __init__(self):
         if sys.argv[0] != 'main.py':
             print('Nonofficial execution.')
         self.args = sys.argv[1:]
 
     def is_valid_length(self) -> bool:
-        return len(self.args) == self.number_of_args
+        return len(self.args) == glob.ARGUMENT_LENGTH
     
     def extract(self) -> None:
         self.method = self.args[0]
