@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 from globals import MOVEMENT, REVERSE_MOVEMENT_MAP
-from typing import List, Dict
+from typing import List
 
 class Node:
     def __init__(self, current_board, order:List, way:List=[]):
