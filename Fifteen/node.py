@@ -2,20 +2,23 @@
 
 from __future__ import annotations
 from globals import MOVEMENT, REVERSE_MOVEMENT_MAP
-from typing import List
+from typing import List, Dict
 
 class Node:
     def __init__(self, current_board, order:List, way:List=[]):
         self.board:List[List] = current_board
         self.way:List = way.copy()
-        self.children:dict[str, Node] = {}
-        self.errors:dict[str, int] = {}
+        self.children = {}
+        self.costs = {}
         self.default_order:List = order
         self.to_visit:List = order.copy()
         if way:
             self.to_visit.remove(REVERSE_MOVEMENT_MAP[way[-1]])
+        
+    def __lt__(self, other: Node):
+         return self.costs['f'] < other.costs['f']
 
-    def create_child(self, board_after_move, move):
+    def create_child(self, board_after_move, move: str):
         new_way = self.way + [move]
         child = Node(board_after_move, self.default_order, new_way)
         self.children[move] = child

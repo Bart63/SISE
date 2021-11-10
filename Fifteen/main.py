@@ -40,8 +40,6 @@ def main():
         )
         for line in input_board:
             g.START_BOARD.append(line.split())
-                      
-    g.find_emptyxy(g.START_BOARD)
     
     start_time = time_ns()
     stats = bfs(g) if cla.method=='bfs' \

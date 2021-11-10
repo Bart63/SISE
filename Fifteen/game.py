@@ -8,8 +8,8 @@ class Game():
     START_BOARD = []
     empty_xy = (-1, -1)
     ORDER = []
-    amount_of_processed_nodes = 0
-    amount_of_visited_nodes = 0
+    amount_of_processed_nodes = 1
+    amount_of_visited_nodes = 1
 
     def __init__(self, order):
         self.ORDER = order

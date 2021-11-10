@@ -26,3 +26,9 @@ def calculate_error_hamm(current_board: List[List], solved_board: List[List]):
 
 def calculate_error(heuristic: str):
     return calculate_error_manh if heuristic == 'manh' else calculate_error_hamm
+
+def add_to_open(open, neighbor):
+    for node in open:
+        if (neighbor == node and neighbor.f >= node.f):
+            return False
+    return True
