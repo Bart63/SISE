@@ -1,5 +1,3 @@
-#!/usr/bin/python
-
 ARGUMENT_LENGTH = 5
 MAX_DEPTH = 20
 NANO_TO_MILI = 0.000001
@@ -29,14 +27,14 @@ STRATS_DICT = {
 
 FILE_RE = r'^[0-9]+[x][0-9]+_[0-9]+_[0-9]+[a-zA-Z_]*.txt'
 
-MOVEMENT={
+MOVEMENT = {
     'R': (0, 1),
     'L': (0, -1),
     'U': (-1, 0),
     'D': (1, 0)
 }
 
-REVERSE_MOVEMENT_MAP={
+REVERSE_MOVEMENT_MAP = {
     'R': 'L',
     'L': 'R',
     'U': 'D',

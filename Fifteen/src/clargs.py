@@ -1,11 +1,10 @@
-#!/usr/bin/python
-
 import re
 import sys
 import globals as glob
 from os.path import exists
 
-class Clargs():
+
+class Clargs:
     def __init__(self):
         if sys.argv[0] != 'main.py':
             print('Nonofficial execution.')
@@ -13,7 +12,7 @@ class Clargs():
 
     def is_valid_length(self) -> bool:
         return len(self.args) == glob.ARGUMENT_LENGTH
-    
+
     def extract(self) -> None:
         self.method = self.args[0]
         self.strategy = self.args[1]
@@ -24,11 +23,11 @@ class Clargs():
 
     def is_valid_method(self) -> bool:
         return self.method in glob.METHODS
-    
+
     def is_valid_strategy(self) -> bool:
         self.option = glob.METHOD_MAP[self.method]
         return glob.STRATS_DICT[self.option]['val'](self.strategy)
-    
+
     def is_valid_files(self) -> bool:
         pattern = re.compile(glob.FILE_RE, re.IGNORECASE)
         val_name = all([re.fullmatch(pattern, f) for f in self.filenames])
@@ -39,7 +38,7 @@ class Clargs():
 
         if not exist:
             print('Input file does not exist')
-        
+
         return val_name and exist
 
     def is_valid(self) -> bool:
@@ -51,11 +50,11 @@ class Clargs():
         if not self.is_valid_method():
             print('Incorrect method name')
             return False
-        
+
         if not self.is_valid_strategy():
             print('Incorrect strategy name')
             return False
-        
+
         if self.is_valid_files():
             return True
         return False

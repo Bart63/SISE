@@ -1,15 +1,14 @@
-#!/usr/bin/python
-
 from helpers import get_index_of_value
 import globals as glob
 
-class Game():
+
+class Manager:
     SOLVED_BOARD = []
     START_BOARD = []
     empty_xy = (-1, -1)
     ORDER = []
-    amount_of_processed_nodes = 1
-    amount_of_visited_nodes = 1
+    processed_states_len = 1
+    visited_states_len = 1
 
     def __init__(self, order):
         self.ORDER = order
